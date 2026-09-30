@@ -1,32 +1,24 @@
-# React + TypeScript + Vite
+# L'ÉLÉGANCE — Haute Nail Architecture Studio 3D
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Experiencia interactiva 3D de alta gama para estudio de uñas y alta costura. Desarrollado con **React**, **Three.js / React Three Fiber**, **Drei** y **Vite**.
 
-Currently, two official plugins are available:
+## 💅 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Vórtice Escultórico 3D (Tornado de 24 Uñas Únicas):** Movimiento dinámico sincronizado con el scroll y materiales PBR procedurales de lujo (Korean Blush Aura, Molten Chrome, Velvet Cat-Eye, Carey & Ámbar, Mármol Esmeralda, Oro 24K, Cuarzo y más).
+- **Atelier Custom 3D:** Personalizador en tiempo real con selección de acabados, forma esculpida (Almendra, Coffin, Stiletto, Ovalada) y escalas de salón (#1 a #4).
+- **Cotizador Dinámico Colombia (COP):** Precios de referencia adaptados a salones de alta gama en Bogotá/Medellín.
+- **Guía de Preguntas Frecuentes (FAQ):** Cuidados, durabilidad de 3-4 semanas, técnica de manicura rusa y políticas de cita.
+- **Sistema de Reservas Privadas:** Formulario modal con confirmación y confeti interactivo.
 
-## React Compiler
+## 🚀 Instalación y Ejecución
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Instalar dependencias
+npm install
 
-## Expanding the Oxlint configuration
+# Iniciar servidor de desarrollo
+npm run dev
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# Compilar para producción
+npm run build
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
