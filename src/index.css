@@ -1,0 +1,124 @@
+/* ============================================
+   L'ÉLÉGANCE — Haute Nail Studio
+   Design System: Light / Ivory Mode
+   ============================================ */
+
+:root {
+  --bg:        #faf9f7;
+  --bg-warm:   #f5f1ec;
+  --bg-card:   rgba(255, 255, 255, 0.72);
+  --text-dark: #1a1714;
+  --text-mid:  #6b5f57;
+  --text-mute: #a8998f;
+  --gold:      #b8924a;
+  --gold-lt:   #d4b07a;
+  --rose:      #d4849a;
+  --chrome:    #7e7e9a;
+  --border:    rgba(184, 146, 74, 0.18);
+  --shadow-s:  0 4px 24px rgba(100, 80, 60, 0.08);
+  --shadow-m:  0 12px 48px rgba(100, 80, 60, 0.14);
+  --shadow-l:  0 32px 80px rgba(100, 80, 60, 0.18);
+
+  --font-heading: 'Cinzel', serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-warm); }
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 146, 74, 0.35);
+  border-radius: 3px;
+}
+
+/* ── Root wrapper ── */
+#root {
+  width: 100%;
+  position: relative;
+}
+
+/* ── Glass card ── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(184, 146, 74, 0.15);
+  box-shadow: var(--shadow-m);
+}
+
+/* ── Pill button ── */
+.pill {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 146, 74, 0.25);
+}
+
+/* ── Gold CTA button ── */
+.btn-gold {
+  background: linear-gradient(135deg, #b8924a 0%, #c9a86c 50%, #b8924a 100%);
+  color: #fff;
+  border: none;
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+.btn-gold:hover {
+  box-shadow: 0 8px 30px rgba(184, 146, 74, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ── Floating ambient orbs ── */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-12px, -20px) scale(1.06); }
+  66%       { transform: translate(10px, 10px) scale(0.96); }
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  animation: drift 18s ease-in-out infinite;
+}
+
+/* ── Scroll progress bar ── */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b8924a, #d4849a);
+  z-index: 1000;
+  transition: width 0.1s linear;
+}
+
+/* ── Fade-in on scroll ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
